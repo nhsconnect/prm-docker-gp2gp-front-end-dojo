@@ -1,4 +1,4 @@
-FROM node:12.13.0-buster-slim
+FROM node:14.16.0-buster-slim
 
 # Install common Dojo scripts
 ENV DOJO_VERSION=0.10.2
