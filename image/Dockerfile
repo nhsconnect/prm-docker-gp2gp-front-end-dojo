@@ -1,4 +1,4 @@
-FROM node:16.14.2-buster
+FROM node:18.12-bullseye
 
 # Install common Dojo scripts
 ENV DOJO_VERSION=0.10.2
