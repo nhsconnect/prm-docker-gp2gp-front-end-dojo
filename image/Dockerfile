@@ -1,4 +1,5 @@
-FROM node:18.12-bullseye
+FROM node:16.14.2-buster
+#FROM node:18.12-bullseye
 
 # Install common Dojo scripts
 ENV DOJO_VERSION=0.10.2
@@ -28,6 +29,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN mkdir "/home/dojo/node_modules" "/home/dojo/.cache" "/home/dojo/.cache/Cypress"
 RUN npm config set prefix "/home/dojo/node_modules"
 RUN CYPRESS_CACHE_FOLDER=/home/dojo/.cache/Cypress npm i -g cypress --unsafe-perm
+
+RUN npm i -g aws-cli
 
 COPY profile /home/dojo/.profile
 COPY bashrc /home/dojo/.bashrc
