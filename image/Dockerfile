@@ -35,9 +35,5 @@ COPY bashrc /home/dojo/.bashrc
 RUN chown dojo:dojo /home/dojo/.profile /home/dojo/.bashrc 
 RUN chown -R dojo:dojo /home/dojo/node_modules /home/dojo/.cache/Cypress
 
-RUN mkdir /usr/local/lib/node_modules/aws-cli
-RUN mkdir /home/dojo/node_modules/aws-cli
-RUN npm i -g aws-cli
-
 ENTRYPOINT ["/usr/bin/tini", "-g", "--", "/usr/bin/entrypoint.sh"]
 CMD ["/bin/bash"]
