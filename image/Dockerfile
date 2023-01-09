@@ -30,12 +30,14 @@ RUN mkdir "/home/dojo/node_modules" "/home/dojo/.cache" "/home/dojo/.cache/Cypre
 RUN npm config set prefix "/home/dojo/node_modules"
 RUN CYPRESS_CACHE_FOLDER=/home/dojo/.cache/Cypress npm i -g cypress --unsafe-perm
 
-RUN npm i -g aws-cli
-
 COPY profile /home/dojo/.profile
 COPY bashrc /home/dojo/.bashrc
 RUN chown dojo:dojo /home/dojo/.profile /home/dojo/.bashrc 
 RUN chown -R dojo:dojo /home/dojo/node_modules /home/dojo/.cache/Cypress
+
+RUN mkdir /usr/local/lib/node_modules/aws-cli
+RUN mkdir /home/dojo/node_modules/aws-cli
+RUN npm i -g aws-cli
 
 ENTRYPOINT ["/usr/bin/tini", "-g", "--", "/usr/bin/entrypoint.sh"]
 CMD ["/bin/bash"]
