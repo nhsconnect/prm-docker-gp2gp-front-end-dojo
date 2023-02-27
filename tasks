@@ -12,7 +12,7 @@ if [[ ! -f $DOCKER_OPS_FILE ]];then
 fi
 source $DOCKER_OPS_FILE
 
-image_name="nhsdev/prm-docker-gp2gp-front-end-dojo"
+image_name="nhsdev/prm-gp2gp-front-end-dojo"
 image_registry="dockerhub"
 image_dir="./image"
 
