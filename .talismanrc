@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: tasks
+  checksum: 382856ae9041e27c51a620b9165342d855bc6b4f8e6a072c390febcdd93018cc
+version: ""
